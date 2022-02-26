@@ -11,19 +11,15 @@
     "yarn": "*"
   },
   "scripts": {
-    "precommit": "yarn lint",
     "start": "cross-env NODE_ENV=production pm2 start ./src/index.js",
     "dev": "nodemon ./src/index.js",
-    "lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
-    "lint:fix": "yarn lint --fix",
-    "lint:watch": "yarn lint --watch",
     "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 20000 --exit --recursive src/api/tests",
     "test:unit": "cross-env NODE_ENV=test mocha src/api/tests/unit",
     "test:integration": "cross-env NODE_ENV=test mocha --timeout 20000 --exit src/api/tests/integration",
     "test:watch": "cross-env NODE_ENV=test mocha --watch src/api/tests/unit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "postcoverage": "open-cli coverage/lcov-report/index.html",
-    "validate": "yarn lint && yarn test",
+    "validate": "yarn test",
     "docker:start": "cross-env NODE_ENV=production pm2-docker start ./src/index.js",
     "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
     "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
@@ -47,7 +43,6 @@
     "pm2": "^5.1.0",
     "pug": "^3.0.1",
     "sequelize": "^6.16.3",
-    "uuid": "^3.1.0",
     "winston": "^3.1.0"
   },
   "devDependencies": {
@@ -55,9 +50,6 @@
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
     "coveralls": "^3.0.0",
-    "eslint": "^7.29.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.2.0",
     "husky": "^3.0.7",
     "mocha": "^9.2.1",
     "nodemon": "^2.0.1",
