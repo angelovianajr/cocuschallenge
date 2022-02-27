@@ -7,19 +7,17 @@
   "private": false,
   "license": "MIT",
   "engines": {
-    "node": ">=12",
-    "yarn": "*"
+    "node": ">=12"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=production pm2 start ./src/index.js",
     "dev": "nodemon ./src/index.js",
-    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 20000 --exit --recursive src/api/tests",
     "test:unit": "cross-env NODE_ENV=test mocha src/api/tests/unit",
     "test:integration": "cross-env NODE_ENV=test mocha --timeout 20000 --exit src/api/tests/integration",
     "test:watch": "cross-env NODE_ENV=test mocha --watch src/api/tests/unit",
-    "validate": "yarn test",
     "docker:start": "cross-env NODE_ENV=production pm2-docker start ./src/index.js",
-    "docker:dev": "docker-compose -f docker-compose.yml up"
+    "docker:prod": "NODE_ENV=production docker-compose -f docker-compose.yml up",
+    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up"
   },
   "dependencies": {
     "axios": "^0.21.1",
