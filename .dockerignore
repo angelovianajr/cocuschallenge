@@ -1,0 +1,10 @@
+node_modules/
+.git/
+.vscode/
+
+.dockerignore
+Dockerfile
+
+.gitignore
+.env
+.editorconfig
