@@ -65,3 +65,32 @@ npm run test:watch
 # show logs in production
 pm2 logs
 ```
+
+## Routes
+The API consists of two routes
+
+### POST /triangle
+```bash
+body: {
+    sizes: [
+    number,
+    number,
+    number
+]}
+```
+This route categorizes the triangle into Equilateral, Isoceles and Scalene. After that, it returns to the user and saves the information in the bank.
+
+### GET /triangle
+Example
+```bash
+[{
+    "id": 1,
+    "type": "equilateral",
+    "size_a": 10,
+    "size_b": 10,
+    "size_c": 10
+    "createdAt": "2022-01-26T00:00:00.000Z",
+    "updatedAt": "2022-01-26T00:00:00.000Z"
+}]
+```
+This route return all categorized triangles with all infos
