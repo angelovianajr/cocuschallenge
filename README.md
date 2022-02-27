@@ -18,7 +18,7 @@ cp .env.example .env
 ```
 Fill with RDS or database variables
 
-## Docker
+## Docker (preferably)
 
 ```bash
 # run container locally
@@ -44,19 +44,6 @@ npm install
 
 ```bash
 npm start
-```
-
-## Lint
-
-```bash
-# lint code with ESLint
-npm run lint
-
-# try to fix ESLint errors
-npm run lint:fix
-
-# lint and watch for changes
-npm run lint:watch
 ```
 
 ## Test
