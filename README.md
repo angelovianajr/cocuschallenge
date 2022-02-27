@@ -78,7 +78,7 @@ body: {
     number
 ]}
 ```
-This route categorizes the triangle into Equilateral, Isoceles and Scalene. After that, it returns to the user and saves the information in the bank.
+This route categorizes the triangle into Equilateral, Isoceles and Scalene. After that, it returns to the user and saves the information in the database.
 
 ### GET /triangle
 Example
